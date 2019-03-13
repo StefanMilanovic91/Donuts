@@ -1,0 +1,425 @@
+@import "_variables.sass"
+@import "_mixin.sass"
+
+html,body
+    overflow-x: hidden
+    min-height: 100%
+    font-size: 14px
+
+//****************************************************  HEADER CONTENT ********************************************************
+    
+header
+    position: relative
+    background: url($header-footer-bkg)
+    .navbar-brand
+        height: auto
+    .navbar-toggle
+        width: 44px
+        height: 42px
+        background: url("../img/hambMenu.png") no-repeat
+        background-size: 100% 100%
+        position: absolute
+        bottom: 5px
+        right: 0
+        display: block
+    .navbar-collapse
+        position: absolute
+        right: 0
+        width: 200px
+        z-index: 9999
+        .hmb-inset
+            height: 36px
+            overflow-y: hidden
+            img
+                width: 44px
+                height: 42px
+                float: right
+    .navbar-collapse.collapse.in
+        display: block !important
+    
+    .navbar-collapse.collapse
+        display: none !important
+
+    .navbar-nav
+        margin: 0
+        background-color: #f4649f
+        border-radius: 10px 0 10px 10px
+        overflow: hidden
+        width: 100%
+        li
+            float: none
+            &:last-child
+                a
+                    border-bottom: none
+            a
+                color: #fff
+                font-weight: bold
+                font-size: 1.1em
+                padding: 10px 15px
+                border-bottom: 1px solid #fff
+                &:hover
+                    background-color: #86cacc
+                &:focus
+                    background-color: #86cacc
+                    outline: none
+.active
+    @include active-link()
+    color: #fff !important
+                
+header
+    .social-icon
+        display: none
+
+//  ****************************************************  MAIN CONTENT  *****************************************************
+
+main
+    background: url($main-bg-pattern)
+    .slider
+        position: relative
+        margin-top: 30px
+        .carousel-control
+            display: none
+        .carousel-caption
+            display: none
+                    
+                    
+main
+    .no-padding
+        @include no-padding()
+    .section-under-slider
+        margin-bottom: 30px
+    .sus-img-holder
+        width: 100%
+        img
+            width: 100%
+            max-height: 340px
+    .sus-text-holder
+        position: relative
+        width: 100%
+        background: url($sus-text-holder-pattern)
+        p:nth-of-type(1)
+            width: 75%
+            margin: 0 auto
+            padding: 10% 0 5% 0
+        p:nth-of-type(2)
+            width: 75%
+            margin: 0 auto
+            padding: 5% 0
+            &:first-line
+                font-weight: bold
+
+main
+    .thumbnail
+        border: none
+        background-color: transparent
+        .caption
+            h3
+                color: red
+                text-align: center
+                font-weight: bold
+            p
+                text-align: center
+main
+    .second-section
+        background: url($second-section-pattern)
+        padding-top: 30px
+        .thumbnail
+            img
+                max-height: 135px
+main
+    .discover-img-holder
+        position: relative
+        border-bottom: 5px solid rgba(237, 28, 36, 0.3)
+        padding-bottom: 30px
+        img
+            width: 100%
+        .discover-img-caption
+            position: absolute
+            top: 0
+            left: 0
+            
+            h1
+                color: #fff
+                font-size: 2em
+            p
+                color: #fff
+                display: none
+        >p
+            text-align: center
+            &:nth-of-type(1)
+                font-style: italic
+                margin-top: 20px
+            &:nth-of-type(3)
+                font-weight: bold
+                span
+                    color: #468d93
+        .btn-design
+            @include btn-design()
+            color: #fff
+            transition: all .2s
+            &:hover
+                text-shadow: 0px 0px 30px rgba(0, 0, 0, 1)
+            
+            
+.first-section
+    .first-section-img-holder
+        position: relative
+        img
+            width: 100%
+    .first-section-img-hover
+        position: absolute
+        top: 0
+        bottom: 0
+        width: 100%
+        background-color: rgba(0,0,0,.5)
+        .btn-design
+            @include btn-design()
+            border: none
+            font-size: 1em
+            color: #fff
+            padding: 5px 20px
+            position: absolute
+            width: 125px
+            top: 50%
+            left: calc(50% - 60px)
+            transform: translateY(-50%)
+            &:focus
+                outline: none 
+            
+//  ****************************************************  FOOTER  **************************************************************************
+            
+footer
+    background: url($header-footer-bkg)
+    .footer-list-holder
+        h3
+            text-transform: uppercase
+            font-size: 1.3em
+            font-weight: bold
+            margin-bottom: 25px
+        .list-reset
+            @include list-reset()
+            a
+                color: #000
+    .flh-contact
+        min-width: 150px
+        margin-left: -20px
+        img
+            float: left
+        li
+            p
+                margin-left: 40px
+            &:nth-of-type(2)
+                p
+                    line-height: 30px
+        h3
+            text-align: left
+    .flh-social
+        li
+            display: inline-block
+            a
+                display: block
+            
+
+.copyright-footer
+    background: url($copy-right-footer)
+    p
+        margin: 0
+        padding: 30px 0
+        color: #fff
+        font-size: .9em
+        
+
+//  ****************************************************  MEDIA QUERIES  *******************************************************************
+            
+            
+@media screen and (min-width: 576px)
+    main
+        .slider
+            .carousel-caption
+                display: block
+                position: absolute
+                left: 50%
+                bottom: 25%
+                transform: translateX(-50%)
+                width: 370px 
+                padding: 0
+                .caption-contact
+                    .btn-design
+                        @include btn-design()
+                        display: inline-block
+                        color: #fff
+                        transition: all .1s
+                        &:hover
+                            text-shadow: 0px 0px 30px rgba(0, 0, 0, 1)
+                    p
+                        display: inline-block
+                        text-transform: uppercase
+                        font-size: 1.3em
+    main
+        .slider
+            .carousel-control
+                display: block
+                background-image: none
+                &:hover img
+                    background-color: $btn-bkg
+                img
+                    position: absolute
+                    top: 50%
+                    transform: translate(-50%)
+                    width: 60px
+                    height: 60px
+                    border-radius: 50%
+    main
+        .discover-img-holder
+            .discover-img-caption
+                p
+                    display: block
+        
+    footer 
+        .flh-contact
+            margin-left: 0
+
+@media screen and (min-width: 768px)
+    .offset-1-5
+        margin-left: 12.4999995%
+    
+    footer
+        .flh-menu
+            h3, li
+                text-align: left
+                  
+    header
+        .social-icon
+            display: inline-block
+            margin-bottom: 15px
+            position: absolute
+            bottom: 0
+            right: 150px
+            .list-reset
+                @include list-reset()
+                li
+                    display: inline-block
+                    &:nth-child(1)
+                        img,p
+                            display: inline-block
+                        p
+                            vertical-align: middle
+                            margin-bottom: 0
+                            margin-left: 5px
+                            text-transform: uppercase
+    header
+        .navbar-collapse
+            position: absolute
+            top: 144px
+            right: 0
+    
+    main
+        .slider
+            .carousel-caption
+                width: 550px
+    
+    main
+        .sus-text-holder
+            height: 215px
+            p:nth-of-type(1)
+                padding: 4% 0
+            p:nth-of-type(2)
+                padding: 0
+    
+    main
+        .discover-img-holder
+            .discover-img-caption
+                top: 0
+                left: 50%
+                max-width: 400px
+                   
+    .first-section
+        .btn-design
+            transition: opacity .1s
+            opacity: 0
+        .first-section-img-hover
+            background-color: rgba(0,0,0,0)
+            transition: all .2s
+            &:hover
+                background-color: rgba(0,0,0,.5)
+                .btn-design
+                    opacity: 1
+        
+@media screen and (min-width: 992px)
+    header
+        .container
+            position: relative
+        .navbar-toggle
+            display: none // test
+        .navbar-and-social-icon
+            position: absolute
+            bottom: 15px
+            right: 70px
+        .navbar-collapse
+            width: auto
+            position: static
+            .hmb-inset
+                display: none
+        .nav
+            li
+                display: inline-block
+        .navbar-nav
+            width: auto
+            background-color: transparent
+            border-radius: 0
+            li
+                border-bottom: none
+                &:after
+                    content: " / "
+                    display: inline-block
+                    font-size: 1.3em
+                &:last-child:after
+                    content: ""
+                a
+                    color: #000
+                    padding: 2px 10px 1px 10px
+                    border-radius: 10px
+                    font-weight: normal
+                    text-transform: uppercase
+                    display: inline-block
+                    margin: 0 5px
+                    transition: all .2s
+                    border-bottom: none
+                    &:hover
+                        background-color: #f4649f
+                        color: #fff
+                    &:focus
+                        background-color: #f4649f
+                        color: #fff
+        .social-icon
+            display: block
+            margin-bottom: 15px
+            position: static
+            .list-reset
+                @include list-reset()
+                width: 230px
+                margin: 0 auto
+    
+    header
+        .navbar-collapse.collapse
+            display: block!important
+    
+    main
+        .sus-text-holder
+            height: 281px
+            p:nth-of-type(1)
+                padding: 10% 0
+                    
+    main
+        .discover-img-holder
+            .discover-img-caption
+                top: 10%
+            
+@media screen and (min-width: 1200px)
+    main
+        .sus-text-holder
+            height: 340px
+            p:nth-of-type(2)
+                padding: 5% 0
+                    
+            
